@@ -1,0 +1,71 @@
+
+
+<div class="container">
+{{#if logged_in}}
+<h1 class="m-4 text-white">Welcome {{user.user_name}}</h1>
+
+{{/if}}
+<div class="container d-flex flex-lg-row flex-column align-items-lg-start align-items-center justify-content-center">
+<div class="col-4">
+    <div class="d-flex flex-column align-items-center">
+<div class="bg-white rounded px-2 pt-2 pb-4 w-75 mx-4 mb-4"  >
+<div class="mb-2">
+    <img src="{{user.img_src}}" class="rounded" ></img>
+  </div>
+  <p class="custom-red text-center">{{user.user_name}}</p>
+  </div>
+
+<!-- Button trigger modal -->
+<button type="button" class="trip-btn mb-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Upload a Profile Image
+</button>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add a Profile Image</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <form action="/images/user/{{ user.id }}" method="POST" enctype="multipart/form-data" class="upload-form" data-id="{{user.id}}">
+        <div class="input-group mb-3">
+  <input type="file" name="myImage" class="form-control" id="image{{user.id}}">
+  <label class="input-group-text" for="inputGroupFile02">Upload</label>
+</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="trip-btn" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="trip-btn">Upload</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="col-8">
+
+    {{#if noTrips}}
+        <h2 class="text-white">You don't have any trips!</h2>
+    {{/if}}
+{{#each myTrips as |trip|}}
+
+  <div class="p-3 mb-4 custom-red rounded bg-white container d-flex justify-content-between custom-shadow ">
+    <div class="col-md-6 px-0">
+      <h3 class=" fst-italic roboto">{{trip.trip_name}}</h3>
+      <small class="lead my-3 roboto text-dark">{{trip_description}}</small>
+      <small><p class="text-dark"><a href="{{trip.trip_link}}"><span class="custom-red">View this trip on</span>  {{trip.company.user_name}}</a></p></small>
+      <small class="lead mb-0"><a href="/api/trip/group/{{id}}" class="trip-btn fw-bold roboto">Trip Group</a></small>
+    </div>
+    <div class="col-6">
+    <img src="{{img_src}}"></img>
+  </div>
+  </div>
+
+{{/each}}
+</div>
+</div>
+</div>

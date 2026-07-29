@@ -1,0 +1,329 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap"); */
+
+@import url("//fonts.cdnfonts.com/css/lovelo?styles=25962");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Lovelo", sans-serif;
+  background-image: url("/images/image2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.circular {
+  border-radius: 20px;
+}
+
+.custom-shadow {
+  box-shadow: 5px 10px rgb(253, 72, 72);
+}
+
+.custom-red {
+  color: rgb(253, 72, 72);
+}
+
+.custom-header {
+  position: relative !important;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+a:hover {
+  color: rgb(253, 72, 72);
+}
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 110px 100px;
+}
+@media (max-width: 1000px) {
+  section {
+    padding: 100px 50px;
+  }
+}
+@media (max-width: 600px) {
+  section {
+    padding: 125px 30px;
+  }
+}
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  padding: 35px 100px 0;
+}
+header a {
+  text-transform: capitalize;
+  font-weight: 900;
+}
+header h2 {
+  text-transform: uppercase;
+}
+header .nav {
+  display: flex;
+}
+header .nav li {
+  margin: 0 15px;
+}
+header .nav li:first-child {
+  margin-left: 0;
+}
+header .nav li:last-child {
+  margin-right: 0;
+}
+@media (max-width: 1000px) {
+  header {
+    padding: 20px 50px;
+  }
+}
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+  }
+  header h2 {
+    margin-bottom: 15px;
+  }
+  header .nav li {
+    margin: 0 7px;
+  }
+}
+.box {
+  position: relative;
+  justify-content: center;
+  min-height: 100vh;
+  color: #ffc107;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.432);
+}
+.box video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.box h1 {
+  margin-bottom: 15px;
+  font-size: 50px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+}
+.box h3 {
+  margin-bottom: 40px;
+  font-size: 25px;
+}
+.box a.boxBtn {
+  padding: 15px 35px;
+  background: transparent;
+  border-radius: 50px;
+  color: #fff;
+  text-transform: uppercase;
+  border: 4px solid #fff;
+  transition: all 0.5s;
+}
+.box a.boxBtn:hover {
+  background: rgb(253, 72, 72);
+  color: rgb(255, 255, 255);
+}
+
+.row {
+  background-color: white;
+  border-radius: 30px;
+  --bs-gutter-x: 0rem;
+  --bs-gutter-y: 0rem;
+  /* box-shadow: 12px 12px 22px rgba(68, 68, 68, 0.616); */
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.btn1 {
+  border: none;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.btn1:hover {
+  background: white;
+  border: 1px solid;
+  color: black;
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+@media (max-width: 800px) {
+  .box {
+    min-height: 600px;
+  }
+  .box h1 {
+    font-size: 32px;
+  }
+  .box h3 {
+    font-size: 20px;
+  }
+  .box a.boxBtn {
+    padding: 15px 40px;
+  }
+}
+
+.nexa {
+  font-size: 100px;
+  color: rgb(253, 72, 72);
+}
+
+.nexa2 {
+  font-size: 25px;
+  color: rgb(253, 72, 72);
+}
+
+.loghover:hover {
+  color: rgb(253, 72, 72);
+}
+
+.btn3 {
+  border: 2px solid white;
+  outline: none;
+  height: 50px;
+  width: 50%;
+  background-color: transparent;
+  color: white;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.roboto {
+  font-family: "Lovelo", sans-serif;
+}
+
+.genBtn {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 3px;
+  background: transparent;
+  border-radius: 50px;
+  color: rgb(255, 255, 255);
+  /* color: rgb(253, 72, 72); */
+  text-transform: uppercase;
+  /* border: 2px solid rgb(253, 72, 72); */
+  border: 2px solid rgb(255, 255, 255);
+  transition: all 0.2s;
+}
+
+.genBtn:hover {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 3px;
+  background: rgb(255, 255, 255);
+  /* background: rgb(253, 72, 72); */
+  border-radius: 50px;
+  /* color: rgb(255, 255, 255); */
+  color: rgb(253, 72, 72);
+  text-transform: uppercase;
+  /* border: 2px solid rgb(253, 72, 72); */
+  border: 2px solid rgb(255, 255, 255);
+  transition: all 0.25s;
+}
+
+.navBtn {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 7px;
+  padding-bottom: 5px;
+  background: transparent;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  /* color: rgb(253, 72, 72); */
+  text-transform: uppercase;
+  /* border: 2px solid rgb(253, 72, 72); */
+  border: 2px solid rgb(255, 255, 255);
+  transition: all 0.2s;
+}
+
+.navBtn:hover {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 7px;
+  padding-bottom: 5px;
+  /* background: rgb(253, 72, 72); */
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+  color: rgb(253, 72, 72);
+  text-transform: uppercase;
+  /* border: 2px solid rgb(253, 72, 72); */
+  border: 2px solid rgb(255, 255, 255);
+  transition: all 0.2s;
+}
+
+.trip-btn {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 7px;
+  padding-bottom: 5px;
+  background: transparent;
+  border-radius: 5px;
+  color: rgb(253, 72, 72);
+  /* color: rgb(253, 72, 72); */
+  text-transform: uppercase;
+  /* border: 2px solid rgb(253, 72, 72); */
+  border: 2px solid rgb(253, 72, 72);
+  transition: all 0.2s;
+}
+
+.trip-btn:hover {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 7px;
+  padding-bottom: 5px;
+  background-color: rgb(253, 72, 72);
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  /* color: rgb(253, 72, 72); */
+  text-transform: uppercase;
+  /* border: 2px solid rgb(253, 72, 72); */
+  border: 2px solid rgb(253, 72, 72);
+  transition: all 0.2s;
+}
+
+.red-border {
+  border: 2px solid rgb(253, 72, 72);
+}
+
+.img-bkGround {
+  background-image: url("/images/soloMeet.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.img-bkGround2 {
+  background-image: url("/images/soloCampFire.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

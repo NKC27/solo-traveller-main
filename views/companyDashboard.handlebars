@@ -1,0 +1,77 @@
+
+
+
+{{!-- @TODO add "add post" --}}
+<div class="container p-5">
+  <h1 class="text-white">Welcome to {{user_name}}</h1>
+  <br>
+  <br>
+    {{#if companyAdmin}}
+<a href="/api/trip/new-trip"><button class="genBtn going roboto mx-5 mb-3">Add a Trip</button></a>
+{{/if}}
+
+{{#each trips as |trip|}}
+
+  <div class="container d-flex justify-content-between p-3 p-md-3 my-5 custom-red rounded bg-white custom-shadow">
+    <div class="col-6 p-3">
+      <h3 class="fst-italic roboto">{{trip_name}}</h1>
+      <p class="lead my-3 roboto"><small class="text-dark">{{trip_description}}</small></p>
+      <p class="lead mb-0"><a href="#" class="custom-red fw-bold roboto"><small>{{company.user_name}}</small></a></p>
+        <small><p><a href="{{trip.trip_link}}">View this trip on <span class="text-dark">{{../user_name}}</span></a></p></small>
+
+      {{#if ../user_id}}
+   {{!-- {{#unless ../companyAdmin}} --}}
+      {{!-- Going button, will be connected to api/trip/going via POST request --}}
+      <button id="going" data-id="{{trip.id}}" class="genBtn going roboto">Going!</button>
+      {{!-- {{/unless}} --}}
+      {{/if}}
+      {{!-- @TODO: add conditional edit and delete --}}
+
+      {{#if ../companyAdmin}}
+   <a href="/api/trip/edit/{{id}}"> <button id="edit" data-id="{{trip.id}}" class="trip-btn roboto">Edit</button> </a>
+    {{!-- <button id="upload" data-id="{{trip.id}}" class="btn btn-success roboto">Upload Image</button> --}}
+    
+<!-- Button trigger modal -->
+<button type="button" class="trip-btn" data-bs-toggle="modal" data-bs-target="#imageModal{{trip.id}}">
+  Upload Image
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="imageModal{{trip.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add a Trip Image {{trip.id}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <form action="/images/{{ trip.id }}" method="POST" enctype="multipart/form-data" class="upload-form" data-id="{{id}}">
+        <div class="input-group mb-3">
+  <input type="file" name="myImage" class="form-control" id="image{{id}}">
+  <label class="input-group-text" for="inputGroupFile02">Upload</label>
+</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="trip-btn" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="trip-btn">Upload</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+    <button data-id="{{trip.id}}" class="delete trip-btn roboto">Delete</button>
+    
+      {{/if}}
+    </div>
+  <div class="col-4">
+    <img src="{{img_src}}"></img>
+  </div>
+  </div>
+
+{{/each}}
+
+
+</div>
+<script src="/js/travellerGoing.js"></script>
+<script src="/js/imageUpload.js"></script>
+<script src="/js/deleteTrip.js"></script>
