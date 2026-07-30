@@ -206,7 +206,7 @@ Potential future enhancements:
 # Screenshots
 
 ```markdown
-![Homepage](./public/images/homepage.png)
+![Homepage](<![Homepage](https://github.com/NKC27/solo-traveller-main/blob/main/public/images/homepage.png)>)
 ```
 
 ---
