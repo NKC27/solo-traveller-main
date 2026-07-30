@@ -1,5 +1,7 @@
 # Solo Traveller 🌍
 
+![Status](https://img.shields.io/badge/Status-Live-success)
+
 ![Solo Traveller Homepage](https://raw.githubusercontent.com/NKC27/solo-traveller-main/main/public/images/homepage.png)
 
 A full-stack travel community platform built with **Node.js, Express.js, Sequelize ORM and MySQL**.
@@ -11,9 +13,9 @@ Solo Traveller allows users to create accounts, discover trips, share experience
 ![MySQL](https://img.shields.io/badge/MySQL-database-blue)
 ![Deployment](https://img.shields.io/badge/Deployed-Render-success)
 
-🚀 **Live Application**
+🚀 **Live Demo**
 
-https://solo-traveller-main.onrender.com/
+[View Application](https://solo-traveller-main.onrender.com/)
 
 📂 **GitHub Repository**
 
@@ -141,6 +143,27 @@ Views
  |-- Dynamic user interfaces
 ```
 
+```
+                User
+                 |
+                 v
+              Routes
+                 |
+                 v
+            Controllers
+                 |
+        -----------------
+        |               |
+        v               v
+     Models          Views
+        |
+        v
+ Sequelize ORM
+        |
+        v
+     MySQL Database
+```
+
 ---
 
 # Database Design
@@ -250,6 +273,33 @@ Application runs locally:
 ```
 http://localhost:3001
 ```
+
+---
+
+# Key Engineering Challenges
+
+## Migrating from Local Development to Production
+
+The application was originally built using a local MySQL environment.
+
+To deploy successfully, I needed to:
+
+- Analyse existing database configuration
+- Replace local-only settings with environment-based configuration
+- Configure external MySQL connectivity
+- Debug Sequelize connection issues
+- Manage production secrets securely
+
+## Cloud Deployment Troubleshooting
+
+During deployment, I diagnosed and resolved:
+
+- Localhost database connection failures
+- Railway private network restrictions
+- Environment variable conflicts
+- Sequelize connection configuration errors
+
+This process strengthened my understanding of deploying full-stack applications beyond a local development environment.
 
 ---
 
