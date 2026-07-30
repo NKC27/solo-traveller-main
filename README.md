@@ -1,6 +1,6 @@
 # Solo Traveller 🌍
 
-A full-stack travel community platform built with **Node.js, Express.js, Sequelize ORM and MySQL**, designed to connect travellers through trip discovery, community interaction and shared experiences.
+A full-stack travel community platform built with **Node.js, Express.js, Sequelize ORM and MySQL**, allowing travellers to create accounts, discover trips, share experiences and connect with a community of like-minded explorers.
 
 🚀 **Live Application**
 
@@ -12,33 +12,32 @@ https://github.com/NKC27/solo-traveller-main
 
 ---
 
-# Project Overview
+# Overview
 
-Solo Traveller is a full-stack web application that allows users to create accounts, discover trips, share travel experiences and interact with a community of travellers.
+Solo Traveller is a full-stack web application designed to connect travellers through trip discovery, community posts and shared experiences.
 
-The project demonstrates the development of a complete production-style application using a traditional MVC architecture, including:
+The project demonstrates the development of a complete MVC-based application, including:
 
 - Backend API development
-- Relational database modelling
-- Authentication workflows
+- Relational database design
+- User authentication
 - Session management
 - CRUD operations
 - Cloud deployment
 - Production environment configuration
 
-The application was originally developed for local development and later migrated to a production cloud environment using **Render and Railway**, requiring additional configuration, debugging and deployment improvements.
+This project showcases my ability to design, build, debug and deploy a complete web application from development through to production.
 
 ---
 
-# Key Features
+# Features
 
 ## Authentication & User Management
 
 ✅ User registration and login  
 ✅ Password encryption using bcrypt  
-✅ Session-based authentication  
-✅ Secure user sessions stored using Sequelize  
-✅ Protected user functionality  
+✅ Secure session-based authentication  
+✅ Protected user areas  
 ✅ User profile management
 
 ---
@@ -46,59 +45,51 @@ The application was originally developed for local development and later migrate
 ## Travel Community Features
 
 ✅ Create and manage travel trips  
-✅ Traveller posts and comments  
+✅ Share traveller posts  
+✅ Comment and interact with users  
 ✅ Company accounts for travel providers  
-✅ User generated content  
-✅ Image upload functionality  
-✅ Trip management workflows
+✅ Upload and manage user content
 
 ---
 
-# Technical Architecture
+# Application Architecture
 
-The application follows an MVC (Model-View-Controller) architecture to separate responsibilities and create a maintainable codebase.
+The application follows the **MVC (Model-View-Controller)** architectural pattern.
 
-## Model Layer
+## Models
 
-Responsible for:
-
-- Database structure
-- Data relationships
-- Sequelize ORM models
-- MySQL communication
+Responsible for database structure and relationships using Sequelize ORM.
 
 Examples:
 
-- User models
-- Trip models
-- Comment models
-- Session models
+- Users
+- Trips
+- Posts
+- Comments
+- Sessions
 
 ---
 
-## View Layer
+## Views
 
-Built using:
+Frontend rendering handled using:
 
 - Handlebars.js
+- Bootstrap
 - HTML5
 - CSS3
-- Bootstrap
-
-Responsible for rendering dynamic pages and user interfaces.
+- JavaScript
 
 ---
 
-## Controller Layer
+## Controllers
 
 Responsible for:
 
 - Handling user requests
-- Application logic
-- Database interactions
-- Returning responses
-
-This separation allows the application to remain organised and easier to maintain.
+- Managing application logic
+- Communicating with database models
+- Returning responses to users
 
 ---
 
@@ -112,6 +103,8 @@ This separation allows the application to remain organised and easier to maintai
 - Handlebars.js
 - Bootstrap
 
+---
+
 ## Backend
 
 - Node.js
@@ -122,14 +115,13 @@ This separation allows the application to remain organised and easier to maintai
 - Express Session
 - Connect Session Sequelize
 
-## Cloud & Development Tools
+---
 
-- Git & GitHub
-- Render
-- Railway MySQL
-- npm
-- Environment Variables
-- AWS S3 image storage
+## Cloud & Deployment
+
+- Render - Application Hosting
+- Railway - MySQL Database Hosting
+- GitHub - Version Control
 
 ---
 
@@ -137,178 +129,150 @@ This separation allows the application to remain organised and easier to maintai
 
 The application uses a relational MySQL database managed through Sequelize ORM.
 
-Key concepts implemented:
+Database functionality includes:
 
-- Relational database modelling
-- Database migrations/schema design
-- Model relationships
+- User authentication tables
+- Trip management relationships
+- Session storage
 - Data validation
-- Session persistence
+- One-to-many relationships
 - CRUD operations
 
-The database structure supports relationships between:
-
-- Users
-- Trips
-- Comments
-- Companies
-- Sessions
+Sequelize provides an abstraction layer between the application and database, allowing models and relationships to be managed through JavaScript.
 
 ---
 
 # Production Deployment
 
-The application was deployed using a cloud-based architecture:
+The original application was designed for local development using MySQL running on localhost.
 
-## Application Hosting
+To deploy successfully into production, I updated the application architecture to support cloud hosting.
 
-**Render**
+## Deployment Improvements
 
-The Node.js Express application runs as a production web service.
+Implemented:
 
-## Database Hosting
-
-**Railway MySQL**
-
-The MySQL database is hosted separately and securely connected using environment variables.
-
-## Version Control
-
-**GitHub**
-
-Source control, version management and deployment integration.
+✅ Environment variable configuration  
+✅ External MySQL database connectivity  
+✅ Production database credentials  
+✅ Cloud hosting configuration  
+✅ Secure separation between development and production settings
 
 ---
 
-# Deployment Challenges & Solutions
+# Deployment Architecture
 
-Moving the application from local development to production required solving several real-world deployment issues.
-
-## Database Connectivity
-
-### Challenge
-
-The original application was configured for local MySQL:
-
-This worked locally but failed when deployed because the production environment did not have access to a local database instance.
-
-### Solution
-
-Updated the Sequelize configuration to support environment-based database connections:
-
-- Local development database support
-- Hosted MySQL connection support
-- Production environment variables
-- External database authentication
+User
+|
+|
+Render Hosting
+(Node.js / Express Application)
+|
+|
+Railway MySQL Database
+|
+|
+Sequelize ORM
+|
+|
+Application Models
 
 ---
 
-## Environment Management
+# Development Challenges & Solutions
 
-### Challenge
+## Database Connectivity Issues
 
-The application required different database configurations depending on the environment.
+During deployment, the application initially failed because it was configured to connect to a local MySQL instance.
 
-### Solution
+The production environment did not have access to:
+127.0.0.1:3306
 
-Implemented environment variables to securely manage:
+Solution:
 
-- Database credentials
-- Database host
-- Database port
-- Production configuration
-
-Sensitive information was removed from the codebase and managed through deployment environment settings.
-
----
-
-## Cloud Deployment Debugging
-
-During deployment I diagnosed and resolved issues including:
-
-- Localhost database connection failures
-- Railway private network connection errors
-- Incorrect production database host configuration
-- Environment variable conflicts
-- Sequelize connection failures
-
-This involved analysing deployment logs, debugging connection errors and updating configuration until the application successfully deployed.
+- Updated Sequelize database configuration
+- Added environment-based database settings
+- Connected the application to Railway hosted MySQL
+- Tested production database connectivity
 
 ---
 
-# Authentication Implementation
+## Environment Variable Management
 
-Authentication was implemented using:
+The application originally relied on local `.env` configuration.
 
-- bcrypt password hashing
-- Express sessions
-- Sequelize session storage
+Production deployment required:
 
-User credentials are securely stored rather than using plain text passwords.
+- Secure environment variables
+- Database credentials managed through hosting platforms
+- Removal of hard-coded configuration values
 
-The authentication workflow includes:
+Implemented:
 
-1. User registration
-2. Password hashing
-3. Database storage
-4. Login validation
-5. Session creation
-6. Protected routes
+```javascript
+process.env.MYSQL_URL
 
----
+to allow cloud database connectivity.
 
-# Screenshots
+Deployment Debugging
 
-## Homepage
+Resolved production deployment issues including:
 
-![Homepage](https://raw.githubusercontent.com/NKC27/solo-traveller-main/main/public/images/homepage.png)
+Database connection failures
+Railway private network restrictions
+Incorrect environment variables
+Sequelize connection errors
+Cloud hosting configuration problems
 
-## Trip Management
+This process strengthened my understanding of debugging applications outside of a local development environment.
 
-![Trips](https://raw.githubusercontent.com/NKC27/solo-traveller-main/main/public/images/trips.png)
+Local Installation
 
-## User Dashboard
+Clone the repository:
 
-![Dashboard](https://raw.githubusercontent.com/NKC27/solo-traveller-main/main/public/images/company-dashboard.png)
+git clone https://github.com/NKC27/solo-traveller-main.git
 
-## Community Features
+Navigate into the project:
 
-![Comments](https://raw.githubusercontent.com/NKC27/solo-traveller-main/main/public/images/comments.png)
+cd solo-traveller-main
 
----
+Install dependencies:
 
-# Future Improvements
+npm install
 
-Potential enhancements:
+Create a .env file:
 
-- Add automated testing with Jest
-- Improve frontend experience with React
-- Add advanced search and filtering
-- Add maps integration
-- Improve accessibility
-- Add CI/CD deployment workflows
-- Containerise application using Docker
+DB_NAME=your_database
+DB_USER=your_username
+DB_PASSWORD=your_password
+DB_HOST=localhost
+DB_PORT=3306
 
----
+Start the application:
 
-# What I Learned
+npm start
 
-Through building and deploying this application I gained practical experience in:
+Application runs locally:
 
-✅ Designing full-stack MVC applications  
-✅ Building RESTful backend services  
-✅ Working with relational databases  
-✅ Implementing authentication systems  
-✅ Managing production environment variables  
-✅ Debugging cloud deployment issues  
-✅ Connecting applications to external services  
-✅ Deploying applications using modern cloud platforms
+http://localhost:3001
 
----
+Screenshots
+Homepage
 
-# Author
+Future Improvements
 
-**Nick Clarke**
+Potential future enhancements:
+
+Automated testing using Jest
+Improved validation and error handling
+Advanced trip search and filtering
+Maps integration
+User notifications
+Expanded traveller profiles
+CI/CD deployment workflows
+API documentation using Swagger
+Author
+Nick Clarke
 
 Full Stack Developer | Learning & Development Designer
 
@@ -316,6 +280,8 @@ GitHub:
 
 https://github.com/NKC27
 
----
+⭐ If you found this project interesting, feel free to explore the repository or try the live application.
 
-⭐ Feel free to explore the application or review the source code.
+
+---
+```
