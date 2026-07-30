@@ -6,6 +6,11 @@ A full-stack travel community platform built with **Node.js, Express.js, Sequeli
 
 Solo Traveller allows users to create accounts, discover trips, share experiences and interact with a community of travellers.
 
+![Node](https://img.shields.io/badge/Node.js-24-green)
+![Express](https://img.shields.io/badge/Express.js-framework-black)
+![MySQL](https://img.shields.io/badge/MySQL-database-blue)
+![Deployment](https://img.shields.io/badge/Deployed-Render-success)
+
 🚀 **Live Application**
 
 https://solo-traveller-main.onrender.com/
@@ -198,6 +203,11 @@ Production deployment required debugging:
 - Localhost references
 - Private network restrictions
 - Sequelize connection errors
+
+---
+
+# Developer Notes
+This project involved migrating an application from local development to production deployment, resolving database connectivity issues between Render and Railway, configuring environment variables, and debugging Sequelize connection problems.
 
 ---
 
