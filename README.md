@@ -205,10 +205,6 @@ Potential future enhancements:
 
 # Screenshots
 
-(Add screenshots here)
-
-Example:
-
 ```markdown
 ![Homepage](./public/images/homepage.png)
 ```
