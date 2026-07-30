@@ -209,6 +209,10 @@ Production deployment required debugging:
 # Developer Notes
 This project involved migrating an application from local development to production deployment, resolving database connectivity issues between Render and Railway, configuring environment variables, and debugging Sequelize connection problems.
 
+I revisited an existing full-stack application, analysed an unfamiliar codebase, resolved legacy configuration issues, migrated the application from local development to cloud deployment, configured external database connectivity, managed production environment variables, and deployed successfully using modern cloud infrastructure.
+
+I designed and worked with a relational data model using Sequelize ORM and MySQL, including authentication sessions and user-generated content.
+
 ---
 
 # Local Installation
