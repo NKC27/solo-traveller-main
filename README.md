@@ -1,6 +1,6 @@
 # Solo Traveller 🌍
 
-![Solo Traveller Banner](https://raw.githubusercontent.com/NKC27/solo-traveller-main/main/public/images/homepage.png)
+![Solo Traveller Homepage](https://raw.githubusercontent.com/NKC27/solo-traveller-main/main/public/images/homepage.png)
 
 A full-stack travel community platform built with **Node.js, Express.js, Sequelize ORM and MySQL**.
 
